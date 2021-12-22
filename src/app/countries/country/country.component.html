@@ -1,11 +1,16 @@
-<div class="card">
-<!--  <img src="..." class="card-img-top" alt="...">-->
+<div class="card sticky-top" *ngIf="country">
+  <img [src]="country.flag" class="card-img-top" [alt]="country.name">
   <div class="card-body">
-    <h5 class="card-title"><strong>Country: </strong>name</h5>
+    <h5 class="card-title"><strong>Country: </strong>{{country.name}}</h5>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><strong>Capital: </strong></li>
-    <li class="list-group-item"><strong>Population: </strong></li>
-    <li class="list-group-item"><strong>Languages: </strong></li>
+    <li class="list-group-item"><strong>Capital: </strong>{{ country.capital }}</li>
+    <li class="list-group-item"><strong>Capital: </strong>{{ country.area }} km2</li>
+    <li class="list-group-item"><strong>Population: </strong>{{ country.population }}</li>
+    <li class="list-group-item"><strong>Languages: </strong>
+      <ul type="disc">
+        <li *ngFor="let l of languages">{{ l }}</li>
+      </ul>
+    </li>
   </ul>
 </div>

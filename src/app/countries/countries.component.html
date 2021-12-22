@@ -1,11 +1,16 @@
 <div class="row">
-  <div class="col-6">
+  <div class="col-6" *ngIf="!isFetching">
     <div class="list-group">
-      <a routerLink="" class="list-group-item list-group-item-action">Country name</a>
+      <a routerLink="{{ c.alpha3Code }}" class="list-group-item list-group-item-action" *ngFor="let c of countries">{{ c.name }}</a>
     </div>
   </div>
+
+  <div class="spinner-border" role="status" *ngIf="isFetching">
+    <span class="sr-only">Loading...</span>
+  </div>
+
   <div class="col-6">
-<!--    <router-outlet></router-outlet>-->
-    <app-country></app-country>
+    <router-outlet></router-outlet>
   </div>
 </div>
+

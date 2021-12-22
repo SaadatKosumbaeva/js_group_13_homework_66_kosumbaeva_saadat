@@ -5,17 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryComponent } from './countries/country/country.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountriesComponent,
     CountryComponent,
-    ToolbarComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
